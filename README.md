@@ -1,5 +1,5 @@
 # merged linked list
-*A program that merges two linked list into a sinngle sorted linked list.*
+*A program that merges two linked list into a single sorted linked list.*
 
 **Try to run and use the program**
 >1. With your IDE, run the program.
