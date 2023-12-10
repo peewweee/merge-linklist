@@ -28,6 +28,9 @@ def mergeLinkedLists(list_1, list_2):
     elif list_2:
         current.next = list_2
 
+    if not (0 <= count_nodes(dummy.next) <= 50):
+        raise ValueError("Number of nodes in the merged list should be in the range [0,50].")
+
     return dummy.next
 
 def count_nodes(head):
@@ -38,14 +41,21 @@ def count_nodes(head):
         current = current.next
     return count
 
-# Example 
-list_1 = ListNode(1)
-list_1.next = ListNode(2)
-list_1.next.next = ListNode(4)
+list_1_values = input("Enter values for list 1 (separated by a comma): ")
+list_1_values = list(map(int, list_1_values.split(',')))
+list_1 = ListNode(list_1_values[0])
+current = list_1
+for value in list_1_values[1:]:
+    current.next = ListNode(value)
+    current = current.next
 
-list_2 = ListNode(1)
-list_2.next = ListNode(3)
-list_2.next.next = ListNode(4)
+list_2_values = input("Enter values for list 2 (separated by a comma): ")
+list_2_values = list(map(int, list_2_values.split(',')))
+list_2 = ListNode(list_2_values[0])
+current = list_2
+for value in list_2_values[1:]:
+    current.next = ListNode(value)
+    current = current.next
 
 merged_linkedlists = mergeLinkedLists(list_1, list_2)
 
